@@ -1,48 +1,20 @@
-function VideoCard({title, channel, views}) {
-  return (
+function Book(props) {
+  return(
     <div>
-      <h3>{title}</h3>
-      <p>{channel}</p>
-      <p>조회수 : {views}</p>
+      <h2>이 책의 제목은 {props.title} 입니다.</h2>
+      <p>이 책의 저자는 {props.author} 입니다.</p>
+      <p>이 책의 가격은 {props.price} 입니다.</p>
     </div>
-  );
-}
-
-function VideoList({videos}) {
-  return (
-    <div>
-      {videos.map((video, index) => (
-        <VideoCard
-          key={index}
-          title={video.title}
-          channel={video.channel}
-          views={video.views}
-        />
-        ))}
-        </div>
   )
 }
 
 function App() {
-  const videos = [
-    {
-      title: "리액트 기초 강의",
-      channel: "코딩채널",
-      views: "10만"
-    },
-    {
-      title: "자바스크립트 완벽 정리",
-      channel : "개발자TV",
-      views : "25만"
-    }
-  ]
-
-  return (
-    <div>
-      <h1>추천 영상</h1>
-      <VideoList videos={videos} />
-    </div>
-  );  
+  <div>
+  <Book title = "파이썬" author = "김길동" price = "30000" />
+  <Book title = "데이터베이스" author = "황길동" price = "35000" />
+  <Book title = "인공지능" author = "우길동" price = "45000" />
+  <Book title = "리액트" author = "최길동" price = "25000" />
+  </div>
 }
 
 export default App;
